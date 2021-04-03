@@ -15,3 +15,9 @@ StreamingService.create(name: 'Apple TV Plus', monthly_price: '$4.99', original_
 StreamingService.create(name: 'Discovery Plus', monthly_price: '$4.99-$6.99', original_titles: '50')
 
 
+TopTitle.create(title: "The Queen's Gambit", streaming_service_id: 1)
+TopTitle.create(title: "The Witcher", streaming_service_id: 1)
+TopTitle.create(title: "Stranger Things", streaming_service_id: 1)
+TopTitle.create(title: "Bridgerton", streaming_service_id: 1)
+
+

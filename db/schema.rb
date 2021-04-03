@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_124803) do
   create_table "top_titles", force: :cascade do |t|
     t.string "title"
     t.integer "streaming_service_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

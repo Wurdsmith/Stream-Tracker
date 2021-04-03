@@ -14,7 +14,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def edit
-    @subscription = Subscription.find_by(id: params[:id])
+    set_subscription
   end
 
   def create
@@ -28,7 +28,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def update
-    @subscription = current_user.subscriptions.find_by(id: params[:id])
+    @subscription = current_user.set_subscription
       if @subscription.update(subscription_params)
         redirect_to user_subscriptions_path(current_user), notice: "Subscription successfully updated!"
       else
@@ -37,7 +37,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def destroy
-    @subscription = Subscription.find_by(id: params[:id])
+    set_subscription
     params[:id]
     @subscription.delete
     redirect_to user_subscriptions_path(current_user)
