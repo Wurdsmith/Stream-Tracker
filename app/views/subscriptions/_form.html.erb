@@ -12,7 +12,7 @@
   
     <%= form_with(model: subscription) do |f|%>
       <%=f.label "Enter your monthly price:"%>
-      <%=f.text_field(:monthly_price)%>
+      <%=f.number_field :monthly_price, step: 0.01%>
       <%= f.hidden_field :streaming_service_id, :value => params[:streaming_service_id]%>
       <%= form.submit %>
     </div>

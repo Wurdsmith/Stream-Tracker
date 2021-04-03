@@ -3,6 +3,11 @@ class SubscriptionsController < ApplicationController
 
   def index
     @subscriptions = Subscription.all
+    summed_subscriptions = Subscription.find_subscriptions
+    @total_price = summed_subscriptions.each do |subscription|
+      subscription.monthly_price
+      
+    end
   end
 
   def show
@@ -14,10 +19,12 @@ class SubscriptionsController < ApplicationController
   end
 
   def edit
-    set_subscription
+    @subscription = Subscription.find_by(id: params[:id])
+   
   end
 
   def create
+   
     @subscription = Subscription.create(subscription_params)
     @subscription.user = current_user
       if @subscription.save
@@ -28,7 +35,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def update
-    @subscription = current_user.set_subscription
+    @subscription = current_user.subscriptions.find_by(id: params[:id])
       if @subscription.update(subscription_params)
         redirect_to user_subscriptions_path(current_user), notice: "Subscription successfully updated!"
       else
