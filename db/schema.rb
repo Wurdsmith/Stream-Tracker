@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_124803) do
     t.string "name"
     t.string "monthly_price"
     t.string "original_titles"
+    t.string "image_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
