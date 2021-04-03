@@ -1,0 +1,2 @@
+module TopTitlesHelper
+end

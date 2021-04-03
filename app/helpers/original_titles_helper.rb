@@ -1,0 +1,2 @@
+module OriginalTitlesHelper
+end

@@ -1,0 +1,14 @@
+<h1>Subscriptions</h1>
+
+<table>
+  <tbody>
+    <% @subscriptions.each do |subscription| %>
+      <tr>
+        <td><%= subscription.streaming_service.name %></td>
+        <td><%= subscription.monthly_price %></td>
+        <td><%= link_to 'Edit',  edit_streaming_service_subscription_path(subscription, subscription.streaming_service) %></td>
+        <td><%= button_to("Delete", subscription, method: :delete, data: { confirm: "Really?" }) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

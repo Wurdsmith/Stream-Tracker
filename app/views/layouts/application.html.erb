@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stream Tracker</title>
+
+  <body>
+    <%if current_user %>
+    <%=link_to "Browse Streaming Services", streaming_services_path %>
+    <%=link_to "My Subscriptions", user_subscriptions_path(current_user) %>
+    <%= button_to "Log Out", logout_path, method: :post %>
+    <%else%>
+      <%= link_to "Log In", login_path %>
+      <%= link_to "Sign Up", signup_path %>
+    <%end%>
+    <%= yield %>
+  </body>
+</html>
