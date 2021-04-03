@@ -19,5 +19,56 @@ TopTitle.create(title: "The Queen's Gambit", streaming_service_id: 1)
 TopTitle.create(title: "The Witcher", streaming_service_id: 1)
 TopTitle.create(title: "Stranger Things", streaming_service_id: 1)
 TopTitle.create(title: "Bridgerton", streaming_service_id: 1)
+TopTitle.create(title: "The Crown", streaming_service_id: 1)
+
+TopTitle.create(title: "The Man in the High Castle", streaming_service_id: 2)
+TopTitle.create(title: "The Expanse", streaming_service_id: 2)
+TopTitle.create(title: "The Marvelous Mrs. Maisel", streaming_service_id: 2)
+TopTitle.create(title: "The Grand Tour", streaming_service_id: 2)
+TopTitle.create(title: "Tom Clancy's Jack Ryan", streaming_service_id: 2)
+
+TopTitle.create(title: "The Falcon and the Winter Soldier", streaming_service_id: 3)
+TopTitle.create(title: "WandaVision", streaming_service_id: 3)
+TopTitle.create(title: "The Mandalorian", streaming_service_id: 3)
+TopTitle.create(title: "The Mighty Ducks: Game Changers", streaming_service_id: 3)
+TopTitle.create(title: "The Falcon and the Winter Soldier", streaming_service_id: 3)
+TopTitle.create(title: "Gravity Falls", streaming_service_id: 3)
+
+TopTitle.create(title: "The Handmaid's Tale", streaming_service_id:4)
+TopTitle.create(title: "It's Always Sunny in Philadelphia", streaming_service_id:4)
+TopTitle.create(title: "The Handmaid's Tale", streaming_service_id:4)
+TopTitle.create(title: "Atlanta", streaming_service_id:4)
+TopTitle.create(title: "Fargo", streaming_service_id:4)
+
+TopTitle.create(title: "Game of Thrones", streaming_service_id:5)
+TopTitle.create(title: "Westworld", streaming_service_id:5)
+TopTitle.create(title: "Chernobyl", streaming_service_id:5)
+TopTitle.create(title: "Last Week Tonight with John Oliver", streaming_service_id:5)
+TopTitle.create(title: "Curb Your Enthusiasm", streaming_service_id:5)
+
+TopTitle.create(title: "Yellowstone", streaming_service_id:6)
+TopTitle.create(title: "Organized Crime", streaming_service_id:6)
+TopTitle.create(title: "Brave New World", streaming_service_id:6)
+TopTitle.create(title: "Project Blue Book", streaming_service_id:6)
+TopTitle.create(title: "This Old House", streaming_service_id:6)
+
+TopTitle.create(title: "Little America", streaming_service_id:7)
+TopTitle.create(title: "Long Way Up", streaming_service_id:7)
+TopTitle.create(title: "The Morning Show", streaming_service_id:7)
+TopTitle.create(title: "Truth Be Told", streaming_service_id:7)
+TopTitle.create(title: "Dickinson", streaming_service_id:7)
+
+TopTitle.create(title: "Mysterious Planet", streaming_service_id:8)
+TopTitle.create(title: "Diners, Drive-Ins, and Dives", streaming_service_id:8)
+TopTitle.create(title: "Good Eats", streaming_service_id:8)
+TopTitle.create(title: "Savage Builds", streaming_service_id:8)
+TopTitle.create(title: "Planet Earth 2", streaming_service_id:8)
+
+
+
+
+
+
+
 
 

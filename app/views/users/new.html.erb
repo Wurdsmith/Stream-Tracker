@@ -2,14 +2,12 @@
 
 <%=render(partial: "application/errors", locals: {errors: @user.errors.full_messages})%>
 <%= form_for @user, url: signup_path do |f| %>
-  <%=f.label "Username"%>
-  <%=f.text_field :username%>
-  <%=f.label "Password"%>
-  <%=f.password_field :password %>
-  <%=f.label "Password Confirmation"%>
+  <%=f.label "Username:"%>
+  <%=f.text_field :username%><br>
+  <%=f.label "Password:"%>
+  <%=f.password_field :password %><br>
+  <%=f.label "Confirm Password"%>
   <%=f.password_field :password_confirmation %>
   <%=f.submit "Sign Up"%>
 <%end%>
-<%= button_to "Sign In via Google", "/auth/google_oauth2"
-
-%>
+<%= button_to "Log In With Google", "/auth/google_oauth2"%>
