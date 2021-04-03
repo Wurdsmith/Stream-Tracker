@@ -4,10 +4,11 @@ class SubscriptionsController < ApplicationController
   def index
     @subscriptions = Subscription.all
     summed_subscriptions = Subscription.find_subscriptions
-    @total_price = summed_subscriptions.each do |subscription|
-      subscription.monthly_price
-      
+    @total_price = 0
+    summed_subscriptions.each do |subscription|
+    @total_price += subscription.monthly_price
     end
+    #binding.pry
   end
 
   def show
