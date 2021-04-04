@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :streaming_services
   resources :subscriptions, only: [:new, :create, :index, :edit, :update, :destroy]
 
-  get '/', to: "subscriptions#index"
+  get '/', to: "streaming_services#index"
   get '/signup', to: "users#new", as: "signup"
   post '/signup', to: "users#create"
   get '/login', to: "sessions#new", as: "login"

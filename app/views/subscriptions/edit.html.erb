@@ -2,4 +2,4 @@
 
 <%= render 'form', streaming_service_id: @subscription.streaming_service_id, subscription: @subscription%>
 
-<%= link_to 'Back', subscriptions_path %>
+<%= link_to 'Back', user_subscriptions_path(current_user) %>
