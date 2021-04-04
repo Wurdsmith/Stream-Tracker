@@ -2,11 +2,16 @@ class SubscriptionsController < ApplicationController
   before_action(:require_login)
 
   def index
-    @subscriptions = Subscription.all
-    summed_subscriptions = Subscription.find_subscriptions
-    @total_price = 0
-    summed_subscriptions.each do |subscription|
-    @total_price += subscription.monthly_price
+    if params[:user_id]
+      user = User.find_by(id: params[:user_id])
+      binding.pry
+      @subscriptions = user.subscriptions
+      summed_subscriptions = user.subscriptions.find_subscriptions
+      @total_price = 0
+        summed_subscriptions.each do |subscription|
+        @total_price += subscription.monthly_price
+      end
+
     end
   end
 
