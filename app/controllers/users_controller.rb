@@ -2,11 +2,7 @@ class UsersController < ApplicationController
   before_action :require_login, except: [:new, :create]
 
   def new
-    if session[:user_id]
-      redirect_to user_subscriptions_path(current_user)
-    else
       @user = User.new
-    end
   end
 
   def create

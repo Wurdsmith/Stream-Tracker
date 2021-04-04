@@ -21,7 +21,7 @@ h1 {text-align: center;}
     <% @streaming_services.each do |streaming_service| %>
       <tr>
         <td><img width="175" height="98.5" Padding: 10px; src="<%= streaming_service.image_link %>"alt=""/></td>
-        <td><%= link_to streaming_service.name, streaming_service_path(streaming_service.id) %></td>
+        <td><%= link_to streaming_service.name, streaming_service.website, target: "_blank" %></td>
         <td><%= streaming_service.monthly_price%></td>
         <td><%= streaming_service.original_titles%></td>
         <td><%= link_to "Add Subscription", new_streaming_service_subscription_path(streaming_service) %></td>
