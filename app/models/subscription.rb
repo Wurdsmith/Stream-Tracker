@@ -3,6 +3,5 @@ class Subscription < ApplicationRecord
     belongs_to :streaming_service
 
     validates_presence_of :monthly_price
-    
-    scope :find_subscriptions, ->{self.where user_id: "1"}
+    scope :find_subscriptions, -> (current_user) {self.where user_id: current_user.id}
 end

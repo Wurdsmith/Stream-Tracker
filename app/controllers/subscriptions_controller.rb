@@ -4,14 +4,16 @@ class SubscriptionsController < ApplicationController
   def index
     if params[:user_id]
       user = User.find_by(id: params[:user_id])
-      binding.pry
       @subscriptions = user.subscriptions
-      summed_subscriptions = user.subscriptions.find_subscriptions
-      @total_price = 0
-        summed_subscriptions.each do |subscription|
-        @total_price += subscription.monthly_price
-      end
-
+        if @subscriptions != nil
+          summed_subscriptions = user.subscriptions.find_subscriptions(current_user)
+          @total_price = 0
+          summed_subscriptions.each do |subscription|
+          @total_price += subscription.monthly_price
+          end
+        else
+          redirect_to streaming_services_path     
+        end
     end
   end
 
