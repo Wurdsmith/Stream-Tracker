@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
 
   def new
+    if session[:user_id]
+      redirect_to user_subscriptions_path(current_user)
+    else
     @errors = []
+    end
   end
 
   def create
