@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :subscriptions
   end
-  resources :streaming_services do
+  resources :streaming_services  do
     resources :subscriptions
   end
   
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :streaming_services
   resources :subscriptions
 
+  get '/', to: "subscriptions#index"
   get '/signup', to: "users#new", as: "signup"
   post '/signup', to: "users#create"
   get '/login', to: "sessions#new", as: "login"

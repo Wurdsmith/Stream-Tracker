@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 StreamingService.create(name: 'Netflix', monthly_price: '$8.99-$17.99', original_titles: '1,200', image_link: "https://logos-world.net/wp-content/uploads/2020/04/Netflix-Logo-2014-present.jpg")
 StreamingService.create(name: 'Amazon Prime Video', monthly_price: '$8.99', original_titles: '200', image_link: "https://logos-world.net/wp-content/uploads/2021/02/Amazon-Prime-Video-Logo-2017-present.jpg")
 StreamingService.create(name: 'Disney Plus', monthly_price: '$7.99-$13.99', original_titles: '36', image_link: "https://logos-world.net/wp-content/uploads/2021/02/Disney-Emblem.jpg")

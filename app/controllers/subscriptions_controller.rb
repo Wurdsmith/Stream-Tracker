@@ -8,7 +8,6 @@ class SubscriptionsController < ApplicationController
     summed_subscriptions.each do |subscription|
     @total_price += subscription.monthly_price
     end
-    #binding.pry
   end
 
   def show
@@ -21,12 +20,14 @@ class SubscriptionsController < ApplicationController
 
   def edit
     @subscription = Subscription.find_by(id: params[:id])
+    binding.pry
    
   end
 
   def create
    
     @subscription = Subscription.create(subscription_params)
+    binding.pry
     @subscription.user = current_user
       if @subscription.save
         redirect_to user_subscriptions_path(current_user), notice: "Subscription added!"
