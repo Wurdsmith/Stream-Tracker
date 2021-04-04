@@ -25,7 +25,6 @@ class TopTitlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /top_titles/1 or /top_titles/1.json
   def update
     respond_to do |format|
       if @top_title.update(top_title_params)

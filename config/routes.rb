@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  resources :users do
-    resources :subscriptions
+  resources :users, except: [:show, :index, :new, :create, :destroy, :patch, :put] do
+    resources :subscriptions, except: [:show, :edit, :update, :destroy, :put]
   end
-  resources :streaming_services  do
-    resources :subscriptions
+  resources :streaming_services, except: [:put, :patch, :destroy, :update]  do
+    resources :subscriptions, only: [:new, :create, :edit]
   end
   
   resources :top_titles
   resources :streaming_services
-  resources :subscriptions
+  resources :subscriptions, only: [:new, :create, :index, :edit, :update, :destroy]
 
   get '/', to: "subscriptions#index"
   get '/signup', to: "users#new", as: "signup"

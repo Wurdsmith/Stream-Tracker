@@ -4,7 +4,7 @@ h1 {text-align: center;}
 
 <h1>Streaming Services</h1>
 
-<table align="center" border="0" cellpadding="10" cellspacing="0">
+<table width="100%" align="center" border="0" cellpadding="10" cellspacing="0">
   <thead>
     <tr>
       <th>Provider</th>
@@ -25,7 +25,7 @@ h1 {text-align: center;}
         <td><%= streaming_service.monthly_price%></td>
         <td><%= streaming_service.original_titles%></td>
         <td><%= link_to "Add Subscription", new_streaming_service_subscription_path(streaming_service) %></td>
-        <td><% @top_titles.each do |top_title| if streaming_service.id == top_title.streaming_service_id %> <li><%=top_title.title%></li><% end %><% end %></td>
+        <td><% @top_titles.each do |top_title| if streaming_service.id == top_title.streaming_service_id %> <li style="text-align:left;"><%=top_title.title%></li><% end %><% end %></td>
       </tr>
     <% end %>
   </tbody>

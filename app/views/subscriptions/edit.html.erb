@@ -1,5 +1,5 @@
 <h1>Edit Your <%=@subscription.streaming_service.name%> Subscription</h1>
 
-<%= render 'form', subscription: @subscription, streaming_service_id: @subscription.streaming_service.id%>
+<%= render 'form', streaming_service_id: @subscription.streaming_service_id, subscription: @subscription%>
 
 <%= link_to 'Back', subscriptions_path %>

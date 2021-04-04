@@ -20,20 +20,21 @@ class SubscriptionsController < ApplicationController
 
   def edit
     @subscription = Subscription.find_by(id: params[:id])
-    binding.pry
-   
   end
 
   def create
-   
     @subscription = Subscription.create(subscription_params)
-    binding.pry
     @subscription.user = current_user
-      if @subscription.save
-        redirect_to user_subscriptions_path(current_user), notice: "Subscription added!"
-      else
-        render :new
-    end
+      if params[:subscription_id]
+        @subscription.subscription_id = paramsparams[:subscription_id]
+      end
+        if @subscription.save
+          #flash[:message] = "Subscription created!"
+          redirect_to user_subscriptions_path(current_user)
+        else
+          @subscriptions = Subscription.all
+          render :new
+        end
   end
 
   def update

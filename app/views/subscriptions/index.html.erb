@@ -6,11 +6,11 @@
     
      <p><%= subscription.streaming_service.name %>
       <br><strong>Monthly price:</strong> $<%= subscription.monthly_price %>
-      <%= link_to 'Edit',  edit_streaming_service_subscription_path(subscription, subscription.streaming_service) %>
+      <%= link_to 'Edit',  edit_streaming_service_subscription_path(subscription.streaming_service, subscription) %>
       <%= button_to("Delete Subscription", subscription, method: :delete, data: { confirm: "Really?" }) %></p>     
     <% end %>
 
-    <p>Your total monthly expenses: <strong>$<%=@total_price%> + taxes.</p></strong>
+    <p>Your total monthly expenses: <strong>$<%=@total_price.round(2)%> + taxes.</p></strong>
 
   </body>
 
