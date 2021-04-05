@@ -1,5 +1,8 @@
 <h1>Subscriptions</h1>
 
+<% flash.each do |type, msg| %>
+    <i><strong><%= msg %></strong></i>
+<% end %>
 
   <body>
     <% @subscriptions.each do |subscription| %>

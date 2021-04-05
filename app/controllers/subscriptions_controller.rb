@@ -32,15 +32,14 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.create(subscription_params)
     @subscription.user = current_user
+    #binding.pry
       if params[:subscription_id]
         @subscription.subscription_id = paramsparams[:subscription_id]
       end
         if @subscription.save
-          #flash[:message] = "Subscription created!"
           redirect_to user_subscriptions_path(current_user)
         else
-          @subscriptions = Subscription.all
-          render :new
+          redirect_to user_subscriptions_path(current_user), notice: "Subscription must have a dollar value!"
         end
   end
 

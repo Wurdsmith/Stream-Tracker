@@ -10,39 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_31_124803) do
-
-  create_table "streaming_services", force: :cascade do |t|
-    t.string "name"
-    t.string "monthly_price"
-    t.string "original_titles"
-    t.string "image_link"
-    t.string "website"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "subscriptions", force: :cascade do |t|
-    t.float "monthly_price"
-    t.integer "user_id"
-    t.integer "streaming_service_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "top_titles", force: :cascade do |t|
-    t.string "title"
-    t.integer "streaming_service_id"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
