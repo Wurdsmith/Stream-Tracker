@@ -25,7 +25,6 @@ TopTitle.create(title: "The Falcon and the Winter Soldier", streaming_service_id
 TopTitle.create(title: "WandaVision", streaming_service_id: 3)
 TopTitle.create(title: "The Mandalorian", streaming_service_id: 3)
 TopTitle.create(title: "The Mighty Ducks: Game Changers", streaming_service_id: 3)
-TopTitle.create(title: "The Falcon and the Winter Soldier", streaming_service_id: 3)
 TopTitle.create(title: "Gravity Falls", streaming_service_id: 3)
 
 TopTitle.create(title: "The Handmaid's Tale", streaming_service_id:4)

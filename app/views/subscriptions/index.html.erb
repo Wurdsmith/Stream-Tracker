@@ -1,4 +1,4 @@
-<h1>Subscriptions</h1>
+<h2>Your Subscriptions Dashboard</h2>
 
 <% flash.each do |type, msg| %>
     <i><strong><%= msg %></strong></i>
@@ -7,9 +7,10 @@
   <body>
     <% @subscriptions.each do |subscription| %>
     
-     <p><%= subscription.streaming_service.name %>
-      <br><strong>Monthly price:</strong> $<%= subscription.monthly_price %>
-      <%= link_to 'Edit',  edit_streaming_service_subscription_path(subscription.streaming_service, subscription) %>
+     <p><h3><%= subscription.streaming_service.name %></h3>
+      <strong>Monthly price:</strong> $<%= subscription.monthly_price %><br>
+      <strong>Subscription Notes:</strong> <%= subscription.subscription_notes %><br>
+      <%= link_to 'Edit Subscription',  edit_streaming_service_subscription_path(subscription.streaming_service, subscription) %>
       <%= button_to("Delete Subscription", subscription, method: :delete, data: { confirm: "Really?" }) %></p>     
     <% end %>
 

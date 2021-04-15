@@ -1,20 +1,12 @@
-<%= form_with(model: subscription) do |form| %>
-    <% if subscription.errors.any? %>
-      <div id="error message">
-        <h2><%= pluralize(subscription.errors.count, "error") %></h2>
-        <ul>
-          <% subscription.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-  
-    <%= form_with(model: subscription) do |f|%>
-      <%=f.label "Enter your monthly price:"%>
-      <%=f.number_field :monthly_price, step: 0.01%>
+<%=render(partial: "application/errors", locals: {errors: @subscription.errors.full_messages})%>
+     
+     <%= form_with(model: subscription) do |f| %>
+      <%= f.label "Enter your monthly price:" %><br>
+      <%= f.number_field :monthly_price, step: 0.01%> <br>
+      <%= f.label "Total paying users:" %> <br>
+      <%= f.select :shared_user_accounts, (1..10) %> <br>
+      <%= f.label "Enter any subscription notes:" %> <br>
+      <%= f.text_area :subscription_notes, cols: 50, rows: 10%><br>
       <%= f.hidden_field :streaming_service_id, :value => params[:streaming_service_id]%>
-      <%= form.submit %>
-    </div>
-    <% end %>
+      <%= f.submit "Submit" %>
   <% end %>

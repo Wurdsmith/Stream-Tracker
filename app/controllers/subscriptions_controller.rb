@@ -5,7 +5,8 @@ class SubscriptionsController < ApplicationController
     if params[:user_id]
       user = User.find_by(id: params[:user_id])
       @subscriptions = user.subscriptions
-        if @subscriptions != nil
+      #binding.pry
+        if @subscriptions
           summed_subscriptions = user.subscriptions.find_subscriptions(current_user)
           @total_price = 0
           summed_subscriptions.each do |subscription|
@@ -32,14 +33,10 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.create(subscription_params)
     @subscription.user = current_user
-    #binding.pry
-      if params[:subscription_id]
-        @subscription.subscription_id = paramsparams[:subscription_id]
-      end
         if @subscription.save
           redirect_to user_subscriptions_path(current_user)
         else
-          redirect_to user_subscriptions_path(current_user), notice: "Subscription must have a dollar value!"
+          redirect_to user_subscriptions_path(current_user), notice: "Monthly price can't be blank!"
         end
   end
 
@@ -65,6 +62,6 @@ class SubscriptionsController < ApplicationController
     end
 
     def subscription_params
-      params.require(:subscription).permit(:monthly_price, :streaming_service_id)
+      params.require(:subscription).permit(:monthly_price, :streaming_service_id, :subscription_notes, :shared_user_accounts)
     end
 end
