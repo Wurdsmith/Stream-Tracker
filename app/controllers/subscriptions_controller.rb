@@ -32,7 +32,6 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.create(subscription_params)
     @subscription.user = current_user
-    binding.pry
         if @subscription.save
           redirect_to user_subscriptions_path(current_user)
         else
