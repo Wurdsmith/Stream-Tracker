@@ -5,7 +5,6 @@ class SubscriptionsController < ApplicationController
     if params[:user_id]
       user = User.find_by(id: params[:user_id])
       @subscriptions = user.subscriptions
-      #binding.pry
         if @subscriptions
           @total_price = 0
           @subscriptions.each do |subscription|

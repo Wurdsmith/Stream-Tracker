@@ -1,4 +1,8 @@
-<h2>Your Subscriptions Dashboard</h2>
+<style>
+h3 {color:#027afa};
+</style>
+
+<h1>Your Subscriptions Dashboard</h1 >
 
 <% flash.each do |type, msg| %>
     <i><strong><%= msg %></strong></i>
@@ -8,15 +12,16 @@
     <% @subscriptions.each do |subscription| %>
     
      <p><h3><%= subscription.streaming_service.name %></h3>
-      <strong>Monthly price:</strong> $<%= subscription.monthly_price %> <br>
-      <strong>Subscription Notes:</strong> <%= subscription.subscription_notes %> <br>
-      <strong>Total shared user accounts:</strong> <%=subscription.shared_user_accounts%> <br>
-      <strong>Total monthly cost per user:</strong> $<%=(subscription.monthly_price / subscription.shared_user_accounts).to_f.round(2)%> <br>
+      Monthly price: <strong>$<%= subscription.monthly_price %></strong> <br>
+      Total shared user accounts: <strong><%=subscription.shared_user_accounts%></strong> <br>
+      Total monthly cost per user: <strong>$<%=(subscription.monthly_price / subscription.shared_user_accounts).to_f.round(0)%></strong> <br>
+      Subscription Notes: <strong><%= subscription.subscription_notes %></strong> <br>
       <%= link_to 'Edit Subscription',  edit_streaming_service_subscription_path(subscription.streaming_service, subscription) %>
       <%= button_to("Delete Subscription", subscription, method: :delete, data: { confirm: "Really?" }) %></p>     
     <% end %>
 
-    <p>Your total monthly expenses: <strong>$<%=@total_price.round(2)%> + taxes.</p></strong>
+    <p><h4>Your total streaming subscripions: <strong><%=@subscriptions.count%></strong></h4>
+    <h4>Your total monthly expenses: <strong>$<%=@total_price.round(2)%> + taxes.</h4></p></strong>
 
   </body>
 
