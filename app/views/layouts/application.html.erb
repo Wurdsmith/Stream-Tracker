@@ -2,7 +2,7 @@
 <html>
 
 <link rel="stylesheet" href="/stylesheets/application.css">
-  
+  <img src="https://u.cubeupload.com/Lanik89/StreamingServices.jpg" style="width: 36.6vw; min-width: 220px;" alt="logo">
   <head>
     <title>Stream Tracker</title>
     <div class = "banner">
@@ -14,8 +14,8 @@
   <body style text-align: center>
     <%if current_user %>
     <%=link_to "Browse Streaming Services", streaming_services_path %>
-    <%=link_to "My Subscriptions Dashboard", user_subscriptions_path(current_user) %>
-    <%= button_to "Log Out", logout_path, method: :post %>
+    <%=link_to "My Subscriptions Dashboard", user_subscriptions_path(current_user) %> <br><br>
+      <%= button_to "Log Out", logout_path, method: :post %>
     <%else%>
       <%= link_to "Log In", login_path %>
       <%= link_to "Sign Up", signup_path %>

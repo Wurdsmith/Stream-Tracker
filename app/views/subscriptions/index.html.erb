@@ -8,8 +8,10 @@
     <% @subscriptions.each do |subscription| %>
     
      <p><h3><%= subscription.streaming_service.name %></h3>
-      <strong>Monthly price:</strong> $<%= subscription.monthly_price %><br>
-      <strong>Subscription Notes:</strong> <%= subscription.subscription_notes %><br>
+      <strong>Monthly price:</strong> $<%= subscription.monthly_price %> <br>
+      <strong>Subscription Notes:</strong> <%= subscription.subscription_notes %> <br>
+      <strong>Total shared user accounts:</strong> <%=subscription.shared_user_accounts%> <br>
+      <strong>Total monthly cost per user:</strong> $<%=(subscription.monthly_price / subscription.shared_user_accounts).to_f.round(2)%> <br>
       <%= link_to 'Edit Subscription',  edit_streaming_service_subscription_path(subscription.streaming_service, subscription) %>
       <%= button_to("Delete Subscription", subscription, method: :delete, data: { confirm: "Really?" }) %></p>     
     <% end %>

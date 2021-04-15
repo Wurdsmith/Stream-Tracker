@@ -7,11 +7,11 @@ class SubscriptionsController < ApplicationController
       @subscriptions = user.subscriptions
       #binding.pry
         if @subscriptions
-          summed_subscriptions = user.subscriptions.find_subscriptions(current_user)
           @total_price = 0
-          summed_subscriptions.each do |subscription|
+          @subscriptions.each do |subscription|
           @total_price += subscription.monthly_price
           end
+          #@price_per_user = @total_price / @subscriptions.shared_user_accounts
         else
           redirect_to streaming_services_path     
         end
@@ -33,6 +33,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.create(subscription_params)
     @subscription.user = current_user
+    binding.pry
         if @subscription.save
           redirect_to user_subscriptions_path(current_user)
         else
