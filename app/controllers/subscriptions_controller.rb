@@ -1,16 +1,17 @@
 class SubscriptionsController < ApplicationController
   before_action(:require_login)
 
+
   def index
+    binding.pry
     if params[:user_id]
-      user = User.find_by(id: params[:user_id])
-      @subscriptions = user.subscriptions
+      current_user #This ensures that the user will only be getting their own account's subscription list because it validates the session[:user_id]
+      @subscriptions = @current_user.subscriptions
         if @subscriptions
           @total_price = 0
           @subscriptions.each do |subscription|
           @total_price += subscription.monthly_price
           end
-          #@price_per_user = @total_price / @subscriptions.shared_user_accounts
         else
           redirect_to streaming_services_path     
         end
@@ -58,6 +59,10 @@ class SubscriptionsController < ApplicationController
   private
     def set_subscription
       @subscription = Subscription.find(params[:id])
+    end
+
+    def get_streaming_service_by_id
+      @streaming_service = StreamingService.find_by(id: params[:streaming_service_id]) 
     end
 
     def subscription_params
