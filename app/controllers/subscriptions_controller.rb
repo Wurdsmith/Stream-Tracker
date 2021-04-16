@@ -35,7 +35,7 @@ class SubscriptionsController < ApplicationController
     @subscription.user = current_user
         if @subscription.save
           redirect_to user_subscriptions_path(current_user)
-        else
+        else #I used notice: here because the only way a user can enter invalid data is by not submitting a dollar amount.
           redirect_to user_subscriptions_path(current_user), notice: "Monthly price can't be blank!"
         end
   end
