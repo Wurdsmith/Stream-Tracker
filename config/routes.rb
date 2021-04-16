@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create] do
-    resources :subscriptions, except: [:show, :edit, :update, :destroy, :put]
+    resources :subscriptions, only: [:index]
   end
-  resources :streaming_services, except: [:put, :patch, :destroy, :update]  do
+  resources :streaming_services, only: [:index]  do
     resources :subscriptions, only: [:new, :create, :edit]
   end
   

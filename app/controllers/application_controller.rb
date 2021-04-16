@@ -11,9 +11,4 @@ class ApplicationController < ActionController::Base
       redirect_to '/login' if !current_user
     end
 
-    def get_streaming_service_by_id
-      @streaming_service = StreamingService.find_by(id: params[:streaming_service_id]) 
-    end
-
-    
 end
