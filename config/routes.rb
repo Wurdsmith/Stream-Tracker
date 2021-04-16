@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :subscriptions, only: [:new, :create, :edit]
   end
   
-  resources :subscriptions, only: [:new, :create, :edit, :update, :destroy]
+  resources :subscriptions
 
   #get '/', to: "users#new"
   get '/signup', to: "users#new", as: "signup"

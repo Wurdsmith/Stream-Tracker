@@ -33,6 +33,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.create(subscription_params)
     @subscription.user = current_user
+    binding.pry
         if @subscription.save
           redirect_to user_subscriptions_path(current_user)
         else #I used notice: here because the only way a user can enter invalid data is by not submitting a dollar amount.
