@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="/stylesheets/application.css">
-  <img src="https://u.cubeupload.com/Lanik89/StreamingServices.jpg" style="width: 36.6vw; min-width: 220px;" alt="logo">
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {text-align: center;
+}
+</style>
+
+<link rel="stylesheet" href="/public/stylesheets/application.css">
+  <img src="https://u.cubeupload.com/Lanik89/StreamingServices.jpg" style="width: 36.6vw; min-width: 220px;" alt="logo" align: "center">
   <head>
+  
     <title>Stream Tracker</title>
     <div class = "banner">
       <h2>Stream Tracker</h2>
@@ -11,7 +23,7 @@
     </div>
   </head>
 
-  <body style text-align: center>
+  <body>
     <%if current_user %>
     <%=link_to "Browse Streaming Services", streaming_services_path %>
     <%=link_to "My Subscriptions Dashboard", user_subscriptions_path(current_user) %> <br><br>
