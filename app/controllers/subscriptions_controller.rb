@@ -3,7 +3,7 @@ class SubscriptionsController < ApplicationController
 
 
   def index
-    binding.pry
+    #binding.pry
     if params[:user_id]
       current_user #This ensures that the user will only be getting their own account's subscription list because it validates the session[:user_id]
       @subscriptions = @current_user.subscriptions

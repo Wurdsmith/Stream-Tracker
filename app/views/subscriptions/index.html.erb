@@ -14,7 +14,7 @@ h3 {color:#027afa};
      <p><h3><%= subscription.streaming_service.name %></h3>
       Monthly price: <strong>$<%= subscription.monthly_price %></strong> <br>
       Total shared user accounts: <strong><%=subscription.shared_user_accounts%></strong> <br>
-      Total monthly cost per user: <strong>$<%=(subscription.monthly_price / subscription.shared_user_accounts).to_f.round(0)%></strong> <br>
+      Total monthly cost per user: <strong>$<%=(subscription.monthly_price / subscription.shared_user_accounts).to_f.round(2)%></strong> <br>
       Subscription Notes: <strong><%= subscription.subscription_notes %></strong> <br>
       <%= link_to 'Edit Subscription',  edit_streaming_service_subscription_path(subscription.streaming_service, subscription) %>
       <%= button_to("Delete Subscription", subscription, method: :delete, data: { confirm: "Really?" }) %></p>     
