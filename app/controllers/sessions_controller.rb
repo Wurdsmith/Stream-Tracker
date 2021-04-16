@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
   def create_with_google
     user = User.find_or_create_by(username: google_auth['info']['email']) do |u|
-      u.password = 'password'
+      u.password = SecureRandom.base64(15) #This generates a secure password for Google users. One that they likely won't be using manually to log into their account.
     end
     if user.save
       session[:user_id] = user.id
